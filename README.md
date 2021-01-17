@@ -3,6 +3,10 @@ Simple tutorial setting up FastAPI with SQLAlchemy with a VueJS frontend. I have
 
 This project is still work in progress and mainly aims to get myself familair with FastAPI and recap working with an ORM. Eventually this project will grow and contain more models and more logic.
 
+## Architecture
+
+VueJS <> Axios <> FastAPI <> PostgreSQL
+
 ## Run
 You will need a terminal to start the backend and one for the frontend. The backend API is running on port 8000 and the frontend on port 8081, both on localhost.
 
@@ -20,6 +24,7 @@ $ npm run serve
 $ pipenv shell
 $ pipenv install
 $ uvicorn backend.main:app
+```
 
 ## Sources
 - https://fastapi.tiangolo.com/tutorial/sql-databases/
