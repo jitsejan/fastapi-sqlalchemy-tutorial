@@ -15,29 +15,17 @@
 
     </form>
 
-    <button class="badge badge-primary mr-2"
-      v-if="currentUser.published"
-      @click="updatePublished(false)"
-    >
-      UnPublish
-    </button>
-    <button v-else class="badge badge-primary mr-2"
-      @click="updatePublished(true)"
-    >
-      Publish
-    </button>
-
     <!-- <button class="badge badge-danger mr-2"
       @click="deleteUser"
     >
       Delete
     </button> -->
 
-    <!-- <button type="submit" class="badge badge-success"
+    <button type="submit" class="badge badge-success"
       @click="updateUser"
     >
       Update
-    </button> -->
+    </button>
     <p>{{ message }}</p>
   </div>
 
@@ -63,24 +51,6 @@ export default {
       UserDataService.get(id)
         .then(response => {
           this.currentUser = response.data;
-          console.log(response.data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
-    },
-
-    updatePublished(status) {
-      var data = {
-        id: this.currentUser.id,
-        email: this.currentUser.email,
-        password: this.currentUser.password,
-        published: status
-      };
-
-      UserDataService.update(this.currentUser.user_id, data)
-        .then(response => {
-          this.currentUser.published = status;
           console.log(response.data);
         })
         .catch(e => {

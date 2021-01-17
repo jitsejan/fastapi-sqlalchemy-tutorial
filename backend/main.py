@@ -40,6 +40,16 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     return crud.create_user(db=db, user=user)
 
 
+@app.patch("/users/{user_id}", response_model=schemas.User)
+def update_user(user_id: int, user: schemas.User):
+    stored_user_data = crud.get_user(db, user_id=user_id)
+    stored_user_model = schemas.User(**stored_user_data)
+    update_data = user.dict(exclude_unset=True)
+    updated_user = stored_user_model.copy(update=update_data)
+    users[user_id] = jsonable_encoder(updated_user)
+    return updated_user
+
+
 @app.get("/users/", response_model=List[schemas.User])
 def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = crud.get_users(db, skip=skip, limit=limit)
