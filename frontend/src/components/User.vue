@@ -9,16 +9,10 @@
         />
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="text" class="form-control" id="password"
-          v-model="currentUser.password"
-        />
+        <label for="is_active">Status</label>
+        <input type="checkbox" id="is_active" v-model="currentUser.is_active">
       </div>
 
-      <div class="form-group">
-        <label><strong>Status:</strong></label>
-        {{ currentUser.published ? "Published" : "Pending" }}
-      </div>
     </form>
 
     <button class="badge badge-primary mr-2"
@@ -33,17 +27,17 @@
       Publish
     </button>
 
-    <button class="badge badge-danger mr-2"
+    <!-- <button class="badge badge-danger mr-2"
       @click="deleteUser"
     >
       Delete
-    </button>
+    </button> -->
 
-    <button type="submit" class="badge badge-success"
+    <!-- <button type="submit" class="badge badge-success"
       @click="updateUser"
     >
       Update
-    </button>
+    </button> -->
     <p>{{ message }}</p>
   </div>
 
@@ -65,8 +59,8 @@ export default {
     };
   },
   methods: {
-    getUser(user_id) {
-      UserDataService.get(user_id)
+    getUser(id) {
+      UserDataService.get(id)
         .then(response => {
           this.currentUser = response.data;
           console.log(response.data);
@@ -118,7 +112,7 @@ export default {
   },
   mounted() {
     this.message = '';
-    this.getUser(this.$route.params.user_id);
+    this.getUser(this.$route.params.id);
   }
 };
 </script>

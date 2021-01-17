@@ -26,6 +26,12 @@ $ pipenv install
 $ uvicorn backend.main:app
 ```
 
+
+## Todo
+- Form validation
+- Extend CRUD actions
+- Add authorization
+
 ## Sources
 - https://fastapi.tiangolo.com/tutorial/sql-databases/
 - https://bezkoder.com/vue-js-crud-app/

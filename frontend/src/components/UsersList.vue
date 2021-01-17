@@ -37,10 +37,7 @@
           <label><strong>Email:</strong></label> {{ currentUser.email }}
         </div>
         <div>
-          <label><strong>Password:</strong></label> {{ currentUser.password }}
-        </div>
-        <div>
-          <label><strong>Status:</strong></label> {{ currentUser.published ? "Published" : "Pending" }}
+          <label><strong>Status:</strong></label> {{ currentUser.is_active ? "Active" : "Not active" }}
         </div>
 
         <a class="badge badge-warning"

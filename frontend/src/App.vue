@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <nav class="navbar navbar-expand bg-light">
       <router-link to="/" class="navbar-brand">FastAPI Playground</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
@@ -23,3 +23,6 @@ export default {
   name: "app"
 };
 </script>
+
+<style>
+</style>

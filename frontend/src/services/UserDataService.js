@@ -5,8 +5,9 @@ class UserDataService {
     return http.get("/users/");
   }
 
-  get(user_id) {
-    return http.get(`/users/${user_id}`);
+  get(id) {
+    console.log(id);
+    return http.get(`/users/${id}`);
   }
 
   create(data) {

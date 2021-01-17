@@ -56,21 +56,19 @@ export default {
         email: this.user.email,
         password: this.user.password
       };
-
       UserDataService.create(data)
         .then(response => {
-          this.user.id = response.user.id;
           console.log(response.data);
+          this.user.id = response.id;
           this.submitted = true;
         })
         .catch(e => {
           console.log(e);
         });
     },
-    
     newUser() {
       this.submitted = false;
-      this.tutorial = {};
+      this.user = {};
     }
   }
 };
