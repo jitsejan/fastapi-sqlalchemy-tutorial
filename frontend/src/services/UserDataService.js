@@ -13,10 +13,10 @@ class UserDataService {
   create(data) {
     return http.post("/users", data);
   }
-/* Not implemented in backend */
-//   update(id, data) {
-//     return http.put(`/users/${id}`, data);
-//   }
+
+  update(id, data) {
+    return http.put(`/users/${id}`, data);
+  }
 /* Not implemented in backend */
 //   delete(id) {
 //     return http.delete(`/tutorials/${id}`);

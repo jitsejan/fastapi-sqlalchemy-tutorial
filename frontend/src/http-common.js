@@ -5,7 +5,7 @@ export default axios.create({
   headers: {
     'Access-Control-Allow-Origin': '*',
     "Content-type": "application/json",
-    'Access-Control-Allow-Methsods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Methsods': 'GET, POST, OPTIONS, PUT',
     'Access-Control-Allow-Headers': 'Origin, Access-Control-Allow-Headers, Content-Type, X-Auth-Token'
   }
 });
