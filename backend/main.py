@@ -23,7 +23,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Dependency
+
 def get_db():
     db = SessionLocal()
     try:
@@ -45,7 +45,6 @@ def update_user(user_id: int, user: schemas.User, db: Session = Depends(get_db))
     stored_user_model = crud.get_user(db, user_id=user_id)
     update_data = user.dict(exclude_unset=True)
     updated_user = stored_user_model.copy(update=update_data)
-    users[user_id] = jsonable_encoder(updated_user)
     return updated_user
 
 

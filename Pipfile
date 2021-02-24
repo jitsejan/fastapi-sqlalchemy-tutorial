@@ -7,8 +7,13 @@ name = "pypi"
 uvicorn = "*"
 fastapi = "*"
 sqlalchemy = "*"
+flake8 = "*"
+black = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true
